@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prokat ot Eda</title>
+	<link rel="stylesheet" href="public/style/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<% include block/navbar.ejs %>
+	<div class="container">
+		<img src="public/photo/men.png">
+		<form action="/registration" method="post">
+			<div class="dws-input">
+				<input type="text" name="name" placeholder="Введите логин">
+			</div>
+			<div class="dws-input">
+				<input type="text" name="pass" placeholder="Введите пароль">
+			</div>
+			<input class="dws-submit" type="submit" name="submit" value="Зарегистрироваться"><br />
+		</form>
+	</div>
+</body>
+</html>

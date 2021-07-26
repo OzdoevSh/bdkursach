@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prokat ot eda</title>
+	<link rel="stylesheet" href="/public/style/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<% include block/navbar.ejs %>
+	<form action="/login" class="box" method="post">
+		<h1>Вход</h1>
+		<input type="text" name="name" placeholder="Имя">
+		<input type="text" name="pass" placeholder="Пароль">
+		<input type="submit" value="Войти">
+	</form>
+</body>
+</html>

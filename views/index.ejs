@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prokat ot EDA</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<%if (typeof status == "undefined" || status == false){%>
+	 <%include block/navbar.ejs%>
+ <%} else {%>
+	<%include block/navbarreg.ejs%>
+<%}%>
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-6 photo"><a href="/cars"><img width="500p" src="public/photo/1.jpg" alt=""></a></div>
+			<div class="col-md-6 photo"><a href="other"><img width="500p" src="public/photo/2.jpg" alt=""></a></div>
+		</div>
+	</div>
+
+	<div class="col-md-12 footer">
+		<div class="text-center"><h1>made by Эдуард</h1></div>
+	</div>
+
+</body>
+</html>

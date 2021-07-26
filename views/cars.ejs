@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prokat ot eda</title>
+	<link rel="stylesheet" href="public/style/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<%if (typeof status == "undefined" || status == false){%>
+	 <%include block/navbar.ejs%>
+	<%} else {%>
+	<%include block/navbarreg.ejs%>
+	<%}%>
+	<div class="col-md-12">
+		<div class="container">
+		<div class="row">
+			<%for (var i = 0; i < car.length; i++) {%>
+				<div class="col-md-3 text-center">
+					<form action="/carpage" method="post">
+					<input type="hidden" name="car_id" value="<%=i+1%>">
+					<p><%=car[i].model_name%></p>
+					<p><%=car[i].car_name%></p>
+					<p><%=car[i].type_name%></p>
+					<p><%=car[i].cost%> р./сут.</p>
+						<input type="submit" name="" value="Подробнее">
+					</form>
+				</div>
+			<%}%>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

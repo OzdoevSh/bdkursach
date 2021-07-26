@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prokat ot Eda</title>
+	<link rel="stylesheet" href="public/style/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<%if (typeof status == "undefined" || status == false){%>
+	 <%include block/navbar.ejs%>
+ <%} else {%>
+	<%include block/navbarreg.ejs%>
+<%}%>
+	<div class="col-md-12">
+  <h1>Прокат <%=car[0].model_name%> <%=car[0].car_name%> в Москве</h1>
+	<form action="/order" method="post">
+		<input type="hidden" value="<%=car[0].cost%>" name="car_id">
+		<input type="hidden" value="<%=car[0].model_name%>" name="car_model">
+		<input type="hidden" value="<%=car[0].car_name%>" name="car_name">
+		<input type="date" name="start_time" min="2019-06-5" value="0">
+		<input type="date" name="end_time" min="2019-06-6" value="0">
+		<input type="submit" value="Добавить в заказ">
+	</form>
+	</div>
+  <h2>Параметры:</h2>
+<div class="shop_p_d active" id="shop_id_param_list">
+  <div class="block_white search_phone">
+    <div class="shop_id_param">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Тип двигателя:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].eng_type%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Объем двигателя:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].v_eng%></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Максимальная мощность:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].max_power%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Коробка передач:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].transmission%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Привод:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].privod%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Максимальная скорость:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].max_speed%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Время разгона 0 - 100 км/ч:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].time0_100%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Средний расход топлива:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].fuel_consumption%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Количество мест:</strong>
+              </div><div class="col-sm-6 text-right"><%=car[0].kol_pass%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Объем багажника:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].luggage_capacity%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Длина:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].dlinna%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Ширина:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].width%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row">
+              <div class="col-sm-6">
+                <strong class="">Высота:</strong>
+              </div>
+              <div class="col-sm-6 text-right"><%=car[0].visota%></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p_id_list">
+            <div class="row"><div class="col-sm-6">
+              <strong class="">Клиренс:</strong>
+            </div>
+            <div class="col-sm-6 text-right"><%=car[0].clearance%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

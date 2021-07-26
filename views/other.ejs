@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prokat ot Eda</title>
+	<link rel="stylesheet" href="public/style/other_style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<%if (typeof status == "undefined" || status == false){%>
+	 <%include block/navbar.ejs%>
+	<%} else {%>
+	<%include block/navbarreg.ejs%>
+	<%}%>
+	<div class="col-md-12">
+		<div class="container">
+		<div class="row">
+			<%for (var i = 0; i < other.length; i++) {%>
+				<div class="col-md-3 text-center">
+					<form action="other_in_order" method="post">
+					<input type="hidden" name="other_id" value="<%=i+1%>">
+							<p><%=other[i].add_devices_name%></p>
+							<p><%=other[i].devices_cost%> р.</p>
+						<input type="submit" name="" value="Заказать">
+					</form>
+				</div>
+			<%}%>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
